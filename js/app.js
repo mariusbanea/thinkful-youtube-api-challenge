@@ -1,5 +1,12 @@
 $(document).ready(function () {
-    // This function is to get the data from youtube API and display it on the page
+
+    // STEP 1 - get the input from the user
+    $("#search-form").submit(function (event) {
+        event.preventDefault();
+        getResults($("#query").val());
+    });
+
+    // STEP 2 - using the input from the user make to API call to get the JSON response
     function getResults(query) {
         $.getJSON("https://www.googleapis.com/youtube/v3/search", {
                 "part": "snippet",
@@ -17,6 +24,7 @@ $(document).ready(function () {
         );
     }
 
+    // STEP 3 - using the JSON response, populate the relevant part of your HTML with the variable inside the JSON
     function displaySearchResults(videos) {
         var html = "";
         $.each(videos, function (index, video) {
@@ -29,8 +37,5 @@ $(document).ready(function () {
         $("#search-results ul").html(html);
     }
 
-    $("#search-form").submit(function (event) {
-        event.preventDefault();
-        getResults($("#query").val());
-    });
+
 });
