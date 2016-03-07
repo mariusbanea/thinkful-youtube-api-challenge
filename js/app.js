@@ -12,7 +12,7 @@ $(document).ready(function () {
                 "part": "snippet",
                 "key": "AIzaSyCclIq-RF7zhCJ_JnoXJBLdGvz-v2nzCB0",
                 "q": query,
-                "type": 'video'
+                "type": "video" //only return videos (no channels or playlists) so we can take the video ID and link it back to Youtube
             },
             function (data) {
                 // If there are no results it will just empty the list
@@ -29,16 +29,13 @@ $(document).ready(function () {
     function displaySearchResults(videos) {
 
         var buildTheHtmlOutput = "";
+
         $.each(videos, function (index, video) {
-            // append li to ul
-            //console.log(video.id.videoId);
             //concatenate the results inside the HTML variable
             buildTheHtmlOutput += "<li><p>" + video.snippet.title + "</p><a href='https://www.youtube.com/watch?v=" + video.id.videoId + "' target='_blank'><img src='" + video.snippet.thumbnails.high.url + "'/></a></li>";
-
         });
+
         //use the HTML output to show it in the index.html
         $("#search-results ul").html(buildTheHtmlOutput);
     }
-
-
 });
