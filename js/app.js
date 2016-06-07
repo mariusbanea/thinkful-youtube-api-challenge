@@ -15,6 +15,8 @@ $(document).ready(function () {
                 "type": "video" //only return videos (no channels or playlists) so we can take the video ID and link it back to Youtube
             },
             function (data) {
+                //show the json array received from the API call
+                console.log(data);
                 // If there are no results it will just empty the list
                 if (data.pageInfo.totalResults == 0) {
                     alert("No videos found!");
@@ -32,7 +34,12 @@ $(document).ready(function () {
 
         $.each(videos, function (index, video) {
             //concatenate the results inside the HTML variable
-            buildTheHtmlOutput += "<li><p>" + video.snippet.title + "</p><a href='https://www.youtube.com/watch?v=" + video.id.videoId + "' target='_blank'><img src='" + video.snippet.thumbnails.high.url + "'/></a></li>";
+            buildTheHtmlOutput += "<li>";
+            buildTheHtmlOutput += "<p>" + video.snippet.title + "</p>"; //output vide title
+            buildTheHtmlOutput += "<a href='https://www.youtube.com/watch?v=" + video.id.videoId + "' target='_blank'>"; //taget blank is going to open the video in a new window
+            buildTheHtmlOutput += "<img src='" + video.snippet.thumbnails.high.url + "'/>"; //display video's thumbnail
+            buildTheHtmlOutput += "</a>";
+            buildTheHtmlOutput += "</li>";
         });
 
         //use the HTML output to show it in the index.html
