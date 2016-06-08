@@ -1,167 +1,179 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+/* -------------------------------------
+CSS reset
+(all the browsers will see the website in the same by setting every tag to 0 (the website will look the same on all browsers))
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
+    box-sizing: border-box;
+    /*reset Chrome user agent styles*/
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
 }
 
-/* apply a natural box layout model to all elements, but allowing components to change */
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
+
+/* -------------------------------------
+General styles (General Module, wrapping around the modules bellow)
+(the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules bellow (h2, h3, h4, h5, h6, p, a, ul, li))
+*/
+
+body {
+    font-family: "Oswald", sans-serif;
+    background: #ddd;
+    color: #333;
 }
 
-/* Page style from here */
-body {
-	font-family: "Oswald", sans-serif;
-	background: #CD421A;
-	color: #444;
-}
+
+/* -------------------------------------
+Header styles (Main Module)
+(all the styles inside the < header > or < nav > tags)
+*/
+
+
+/* -------------------------------------
+Content styles (Main Module)
+(all the styles inside the < sections > or < aside > tags)
+*/
+
 #wrapper {
-	background: #CD421A;
-	margin: 1em auto;
-	max-width: 900px;
-	padding: 15px;
+    background: #eee;
+    margin: 1em auto;
+    max-width: 900px;
+    padding: 15px;
+    border-radius: 15px;
+    -webkit-box-shadow: inset 0px 0px 28px 2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: inset 0px 0px 28px 2px rgba(0, 0, 0, 0.75);
+    box-shadow: inset 0px 0px 28px 2px rgba(0, 0, 0, 0.75);
 }
+
 h1 {
-	font-size: 2em;
-	text-transform: uppercase;
-	text-align: center;
-	margin-bottom: 0.5em;
+    font-size: 2em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0.5em;
+    color: darkblue;
 }
+
 .disclaimer {
-	color: #434343;
-	text-align: center;
+    color: #434343;
+    text-align: center;
 }
+
 form {
-	margin-top: 2em;
+    margin-top: 2em;
 }
+
 #query {
-	display: block;
-	border: 1px solid #434343;
-	background: none;
-	padding: .3em;
-	font-size: 1.5em;
-	width: 100%;
+    display: block;
+    border: 1px solid #434343;
+    background: none;
+    padding: .3em;
+    font-size: 1.5em;
+    width: 100%;
+    border-radius: 10px;
 }
+
 form div {
-	margin-top: 1em;
-	text-align: center;
+    margin-top: 1em;
+    text-align: center;
 }
+
+
 /* Button generator */
+
 .myButton {
-	-moz-box-shadow:inset 0px 1px 0px 0px #cf866c;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #cf866c;
-	box-shadow:inset 0px 1px 0px 0px #cf866c;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #d0451b), color-stop(1, #bc3315));
-	background:-moz-linear-gradient(top, #d0451b 5%, #bc3315 100%);
-	background:-webkit-linear-gradient(top, #d0451b 5%, #bc3315 100%);
-	background:-o-linear-gradient(top, #d0451b 5%, #bc3315 100%);
-	background:-ms-linear-gradient(top, #d0451b 5%, #bc3315 100%);
-	background:linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d0451b', endColorstr='#bc3315',GradientType=0);
-	background-color:#d0451b;
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
-	border-radius:3px;
-	border:1px solid #942911;
-	display:inline-block;
-	cursor:pointer;
-	color:#393939;
-	font-family:arial;
-	font-size: 1.5em;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #854629;
+    -moz-box-shadow: inset 0px 1px 0px 0px #cf866c;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #cf866c;
+    box-shadow: inset 0px 1px 0px 0px #cf866c;
+    background-color: darkblue;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid darkblue;
+    display: inline-block;
+    cursor: pointer;
+    color: #eee;
+    font-family: arial;
+    font-size: 1.5em;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #999;
 }
+
 .myButton:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bc3315), color-stop(1, #d0451b));
-	background:-moz-linear-gradient(top, #bc3315 5%, #d0451b 100%);
-	background:-webkit-linear-gradient(top, #bc3315 5%, #d0451b 100%);
-	background:-o-linear-gradient(top, #bc3315 5%, #d0451b 100%);
-	background:-ms-linear-gradient(top, #bc3315 5%, #d0451b 100%);
-	background:linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bc3315', endColorstr='#d0451b',GradientType=0);
-	background-color:#bc3315;
+    background-color: #bc3315;
 }
+
 .myButton:active {
-	position:relative;
-	top:1px;
+    position: relative;
+    top: 1px;
 }
 
 #search-results ul {
-	overflow: hidden;
-	margin-top: 1em;
+    overflow: hidden;
+    margin-top: 1em;
+    list-style-type: none;
 }
+
 #search-results li {
-	float: left;
-	margin-bottom: 2em;
-	padding: 1em;
-	border: 1px solid #434343;
-	border-bottom-width: 3px;
+    float: left;
+    margin-bottom: 2em;
+    padding: 1em;
+    border: 1px solid darkblue;
+    border-radius: 10px;
+    color: darkblue;
 }
+
 #search-results li img {
-	display: block;
-	max-width: 100%;
+    display: block;
+    max-width: 100%;
+    border-radius: 10px;
 }
 
 #search-results li p {
-	padding-bottom: 1em;
-	margin-bottom: 1em;
-	border-bottom: 1px solid #434343;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #434343;
 }
+
+#search-results .error {
+    display: block;
+    max-width: 100%;
+    color: red;
+}
+
+
+/* -------------------------------------
+Footer styles (Main Module)
+(all the styles inside the < footer > tag)
+*/
+
+
+/* -------------------------------------
+place all the desktop styles above this line
+Responsive styles
+(the very last module in the CSS, contains all the media queries and it is dealing with the compatibility with mobiles and tablets)
+place all the mobile tables styles bellow this line
+*/
+
 @media only screen and (min-width: 500px) {
-	#search-results li {
-		width: 48%;
-		float: left;
-		clear: both;
-	}
-	#search-results li:nth-child(2n) {
-		float: right;
-		clear: none;
-	}
+    #search-results li {
+        width: 48%;
+        float: left;
+        clear: both;
+    }
+    #search-results li:nth-child(2n) {
+        float: right;
+        clear: none;
+    }
 }

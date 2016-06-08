@@ -9,10 +9,11 @@ $(document).ready(function () {
     // STEP 2 - using the input from the user (query) make the API call to get the JSON response
     function getResults(query) {
         $.getJSON("https://www.googleapis.com/youtube/v3/search", {
-                "part": "snippet",
-                "key": "AIzaSyCclIq-RF7zhCJ_JnoXJBLdGvz-v2nzCB0",
-                "q": query,
-                "type": "video" //only return videos (no channels or playlists) so we can take the video ID and link it back to Youtube
+                part: "snippet", //youtibe API special parameter (please check documentation here https://developers.google.com/youtube/)
+                maxResults: 20, //number of results per page
+                key: "AIzaSyCclIq-RF7zhCJ_JnoXJBLdGvz-v2nzCB0",
+                q: query, //shearch query from the user
+                type: "video" //only return videos (no channels or playlists) so we can take the video ID and link it back to Youtube
             },
             function (data) {
                 //show the json array received from the API call
