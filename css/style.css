@@ -53,13 +53,15 @@ Content styles (Main Module)
 
 .wrapper {
     background: #eee;
-    margin: 1em auto;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 900px;
     padding: 15px;
     border-radius: 15px;
-    -webkit-box-shadow: inset 0px 0px 28px 2px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: inset 0px 0px 28px 2px rgba(0, 0, 0, 0.75);
-    box-shadow: inset 0px 0px 28px 2px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 28px 2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 28px 2px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 28px 2px rgba(0, 0, 0, 0.75);
 }
 
 .wrapper h1 {
@@ -82,6 +84,7 @@ Content styles (Main Module)
     font-size: 1.5em;
     width: 100%;
     border-radius: 10px;
+    text-align: center;
 }
 
 .wrapper form div {
@@ -93,9 +96,9 @@ Content styles (Main Module)
 /* Button generator */
 
 .wrapper form div .myButton {
-    -moz-box-shadow: inset 0px 1px 0px 0px #cf866c;
-    -webkit-box-shadow: inset 0px 1px 0px 0px #cf866c;
-    box-shadow: inset 0px 1px 0px 0px #cf866c;
+    -moz-box-shadow: 0px 1px 0px 0px #cf866c;
+    -webkit-box-shadow: 0px 1px 0px 0px #cf866c;
+    box-shadow: 0px 1px 0px 0px #cf866c;
     background-color: darkblue;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -145,6 +148,7 @@ Content styles (Main Module)
     padding-bottom: 1em;
     margin-bottom: 1em;
     border-bottom: 1px solid #434343;
+    min-height: 4rem;
 }
 
 
