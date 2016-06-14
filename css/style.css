@@ -27,10 +27,16 @@ General styles (General Module, wrapping around the modules bellow)
 (the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules bellow (h2, h3, h4, h5, h6, p, a, ul, li))
 */
 
+html {
+    background: rgba(0, 0, 0, 0) url("../im/bg-image-space.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 body {
     font-family: "Oswald", sans-serif;
-    background: #ddd;
-    color: #333;
 }
 
 
@@ -45,7 +51,7 @@ Content styles (Main Module)
 (all the styles inside the < sections > or < aside > tags)
 */
 
-#wrapper {
+.wrapper {
     background: #eee;
     margin: 1em auto;
     max-width: 900px;
@@ -56,7 +62,7 @@ Content styles (Main Module)
     box-shadow: inset 0px 0px 28px 2px rgba(0, 0, 0, 0.75);
 }
 
-h1 {
+.wrapper h1 {
     font-size: 2em;
     text-transform: uppercase;
     text-align: center;
@@ -64,16 +70,11 @@ h1 {
     color: darkblue;
 }
 
-.disclaimer {
-    color: #434343;
-    text-align: center;
-}
-
-form {
+.wrapper form {
     margin-top: 2em;
 }
 
-#query {
+.wrapper form #query {
     display: block;
     border: 1px solid #434343;
     background: none;
@@ -83,7 +84,7 @@ form {
     border-radius: 10px;
 }
 
-form div {
+.wrapper form div {
     margin-top: 1em;
     text-align: center;
 }
@@ -91,7 +92,7 @@ form div {
 
 /* Button generator */
 
-.myButton {
+.wrapper form div .myButton {
     -moz-box-shadow: inset 0px 1px 0px 0px #cf866c;
     -webkit-box-shadow: inset 0px 1px 0px 0px #cf866c;
     box-shadow: inset 0px 1px 0px 0px #cf866c;
@@ -110,22 +111,22 @@ form div {
     text-shadow: 0px 1px 0px #999;
 }
 
-.myButton:hover {
+.wrapper form div .myButton:hover {
     background-color: #bc3315;
 }
 
-.myButton:active {
+.wrapper form div .myButton:active {
     position: relative;
     top: 1px;
 }
 
-#search-results ul {
+.wrapper #search-results ul {
     overflow: hidden;
     margin-top: 1em;
     list-style-type: none;
 }
 
-#search-results li {
+.wrapper #search-results li {
     float: left;
     margin-bottom: 2em;
     padding: 1em;
@@ -134,22 +135,16 @@ form div {
     color: darkblue;
 }
 
-#search-results li img {
+.wrapper #search-results li img {
     display: block;
     max-width: 100%;
     border-radius: 10px;
 }
 
-#search-results li p {
+.wrapper #search-results li p {
     padding-bottom: 1em;
     margin-bottom: 1em;
     border-bottom: 1px solid #434343;
-}
-
-#search-results .error {
-    display: block;
-    max-width: 100%;
-    color: red;
 }
 
 
