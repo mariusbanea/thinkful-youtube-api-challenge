@@ -33,10 +33,11 @@ $(document).ready(function () {
     // STEP 3 - using the JSON response (videos), populate the relevant part of your HTML with the variable inside the JSON
     function displaySearchResults(videosArray) {
 
+        //create an empty variable to store one LI for each one the results
         var buildTheHtmlOutput = "";
 
         $.each(videosArray, function (videosArrayKey, videosArrayValue) {
-            //concatenate the results inside the HTML variable
+            //create and populate one LI for each of the results
             buildTheHtmlOutput += "<li>";
             buildTheHtmlOutput += "<p>" + videosArrayValue.snippet.title + "</p>"; //output vide title
             buildTheHtmlOutput += "<a href='https://www.youtube.com/watch?v=" + videosArrayValue.id.videoId + "' target='_blank'>"; //taget blank is going to open the video in a new window
