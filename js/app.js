@@ -19,14 +19,15 @@ $(document).ready(function () {
             function (receivedApiData) {
                 //show the json array received from the API call
                 console.log(receivedApiData);
-                // If there are no results it will just empty the list
+                // if there are no results it will just empty the list
                 if (receivedApiData.pageInfo.totalResults == 0) {
                     alert("No videos found!");
                 }
                 //if there are results, call the displaySearchResults
-                displaySearchResults(receivedApiData.items);
-            }
-        );
+                else {
+                    displaySearchResults(receivedApiData.items);
+                }
+            });
     }
 
     // STEP 3 - using the JSON response (videos), populate the relevant part of your HTML with the variable inside the JSON
