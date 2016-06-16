@@ -2,8 +2,11 @@ $(document).ready(function () {
 
     // STEP 1 - get the input from the user
     $("#search-form").submit(function (event) {
+        //if the page refreshes when you submit the form use "preventDefault()" to force JavaScript to handle the form submission
         event.preventDefault();
+        //get the value from the input box
         var userInput = $("#query").val();
+        //use that value to call the getResults function defined bellow
         getResults(userInput);
     });
 
@@ -37,7 +40,7 @@ $(document).ready(function () {
         var buildTheHtmlOutput = "";
 
         $.each(videosArray, function (videosArrayKey, videosArrayValue) {
-            //create and populate one LI for each of the results
+            //create and populate one LI for each of the results ( "+=" means concatenate to the previous one)
             buildTheHtmlOutput += "<li>";
             buildTheHtmlOutput += "<p>" + videosArrayValue.snippet.title + "</p>"; //output vide title
             buildTheHtmlOutput += "<a href='https://www.youtube.com/watch?v=" + videosArrayValue.id.videoId + "' target='_blank'>"; //taget blank is going to open the video in a new window
