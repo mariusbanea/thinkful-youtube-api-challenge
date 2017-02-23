@@ -13,7 +13,7 @@ $(document).ready(function () {
     // STEP 2 - using the input from the user (query) make the API call to get the JSON response
     function getResults(userSearchTerm) {
         $.getJSON("https://www.googleapis.com/youtube/v3/search", {
-                part: "snippet", //Youtube API special parameter (please check documentation here https://developers.google.com/youtube/)
+                part: "snippet", //Youtube API special parameter (please check documentation here https://developers.google.com/youtube/v3/docs/search/list)
                 maxResults: 20, //number of results per page
                 key: "AIzaSyCclIq-RF7zhCJ_JnoXJBLdGvz-v2nzCB0",
                 q: userSearchTerm, //shearch query from the user
