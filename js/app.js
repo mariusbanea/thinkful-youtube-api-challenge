@@ -22,7 +22,7 @@ $(document).ready(function () {
             function (receivedApiData) {
                 //show the json array received from the API call
                 console.log(receivedApiData);
-                // if there are no results it will just empty the list
+                // if there are no results it will show an error
                 if (receivedApiData.pageInfo.totalResults == 0) {
                     alert("No videos found!");
                 }
